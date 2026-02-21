@@ -273,17 +273,19 @@ ShellRoot {
         }
     }
 
-    // Force service init at startup
-    // QtObject {
-    //     id: serviceInitializer
-    //
-    //     Component.onCompleted: {
-    //         // Trigger service creation
-    //         let _ = NightLightService.active;
-    //         _ = GameModeService.toggled;
-    //         _ = CaffeineService.inhibit;
-    //         _ = IdleService.lockCmd; // Force init
-    //         _ = GlobalShortcuts.appId; // Force init
-    //     }
-    // }
+    // Force service init at startup but defer it slightly so it doesn't block the UI
+    QtObject {
+        id: serviceInitializer
+
+        Component.onCompleted: {
+            Qt.callLater(() => {
+                // Trigger service creation
+                let _ = NightLightService.active;
+                _ = GameModeService.toggled;
+                _ = CaffeineService.inhibit;
+                _ = IdleService.lockCmd; // Force init
+                _ = GlobalShortcuts.appId; // Force init (IPC pipe listener)
+            });
+        }
+    }
 }
