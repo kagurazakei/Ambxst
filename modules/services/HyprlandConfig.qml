@@ -197,12 +197,16 @@ QtObject {
         batchCommand += ` ; keyword decoration:blur:popups_ignorealpha ${Config.hyprland.blurPopupsIgnorealpha}`;
         batchCommand += ` ; keyword decoration:blur:input_methods ${Config.hyprland.blurInputMethods}`;
         batchCommand += ` ; keyword decoration:blur:input_methods_ignorealpha ${Config.hyprland.blurInputMethodsIgnorealpha}`;
+        batchCommand += ` ; keyword bezier myBezier,0.4,0.0,0.2,1.0`;
+        batchCommand += ` ; keyword animation windows,1,2.5,myBezier,popin 80%`;
+        batchCommand += ` ; keyword animation border,1,2.5,myBezier`;
+        batchCommand += ` ; keyword animation fade,1,2.5,myBezier`;
         batchCommand += ` ; ${workspaceCommand}`;
         // Note: workspaceCommand is dynamically calculated based on current animations and orientation.
 
         console.log(`HyprlandConfig: Applying ignorealpha: ${ignoreAlphaValue}, explicit: ${Config.hyprland.blurExplicitIgnoreAlpha}`);
         batchCommand += ` ; keyword layerrule noanim,quickshell ; keyword layerrule blur,quickshell ; keyword layerrule blurpopups,quickshell ; keyword layerrule ignorealpha ${ignoreAlphaValue},quickshell`;
-        console.log("HyprlandConfig: Applying hyprctl batch command.");
+        console.log("HyprlandConfig: Applying hyprctl batch command:", batchCommand);
         hyprctlProcess.command = ["hyprctl", "--batch", batchCommand];
         hyprctlProcess.running = true;
     }
