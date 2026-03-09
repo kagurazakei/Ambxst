@@ -1,0 +1,30 @@
+{
+  "pins": {
+    "nixpkgs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nixos",
+        "repo": "nixpkgs"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "02a13bdaac1271cd8ed467c7309eb513ee0bcaff",
+      "url": "https://github.com/nixos/nixpkgs/archive/02a13bdaac1271cd8ed467c7309eb513ee0bcaff.tar.gz",
+      "hash": "sha256-lVPzTij228brnWwRTpM9lnzaCaX2Eh8M9QkCQSpWGeA="
+    },
+    "quickshell": {
+      "type": "Git",
+      "repository": {
+        "type": "Git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "15a84097653593dd15fad59a56befc2b7bdc270d",
+      "url": null,
+      "hash": "sha256-mMoiXABDtkSJxCYDrkhJ/TrrJf5M46oUfIlJvv2gkZ0="
+    }
+  },
+  "version": 7
+}
