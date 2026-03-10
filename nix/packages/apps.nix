@@ -1,7 +1,8 @@
 # Applications: terminal, launcher, control panels
 { pkgs }:
 
-with pkgs; [
+with pkgs;
+[
   # Terminal
   kitty
   tmux
@@ -17,6 +18,6 @@ with pkgs; [
   gradia
 
   # Icons
-  kdePackages.breeze-icons
-  hicolor-icon-theme
+  papirus-icon-theme
+  papirus-folders
 ]

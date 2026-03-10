@@ -3,7 +3,7 @@
 //@ pragma DataDir $BASE/ambxst
 //@ pragma StateDir $BASE/ambxst
 //@ pragma CacheDir $BASE/ambxst
-
+//@ pragma IconTheme oomox-tokyodark-terminal
 import QtQuick
 import Quickshell
 import Quickshell.Wayland
